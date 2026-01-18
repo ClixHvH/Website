@@ -274,19 +274,26 @@
 
         .badge-container .tooltip {
             visibility: hidden;
-            width: 120px;
+            width: auto;
             background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             text-align: center;
             border-radius: 6px;
-            padding: 5px 0;
+            padding: 10px;
             position: absolute;
             z-index: 100;
             bottom: 125%;
             left: 50%;
-            margin-left: -60px;
+            transform: translateX(-50%);
             opacity: 0;
             transition: opacity 0.3s;
+        }
+
+        .badge-container .tooltip .tooltip-image {
+            width: 200px;
+            height: auto;
+            display: block;
+            border-radius: 4px;
         }
 
         .badge-container:hover .tooltip {
@@ -860,12 +867,12 @@
                             <div class="badge-box-inner">
                                 <div class="badge-group">
                                     <div class="badge-container">
-                                        <img src="https://i.ibb.co/3tsRnPc/imagem.png" alt="Owner" class="badge">
-                                        <span class="tooltip">Owner</span>
+                                        <img src="assets/owner.png" alt="Owner" class="badge">
+                                        <div class="tooltip"><img src="https://i.ibb.co/3tsRnPc/imagem.png" alt="Owner" class="tooltip-image"></div>
                                     </div>
                                     <div class="badge-container">
-                                        <img src="https://i.ibb.co/3tsRnPc/imagem.png" alt="Partner" class="badge">
-                                        <span class="tooltip">Partner</span>
+                                        <img src="assets/partner.gif" alt="Partner" class="badge">
+                                        <div class="tooltip"><img src="https://i.ibb.co/3tsRnPc/imagem.png" alt="Partner" class="tooltip-image"></div>
                                     </div>
                                 </div>
                             </div>
