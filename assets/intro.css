@@ -1,0 +1,106 @@
+    #boot-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 80px;
+      z-index: 9999;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+      transition: opacity 1.8s ease-in-out;
+    }
+    .spinner {
+      width: 80px;
+      height: 80px;
+      border: 8px solid rgba(255,255,255,0.1);
+      border-top: 8px solid #fff;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    #xp-logo {
+      width: 180px;
+      height: 180px;
+      background: url('icons/linux_cat.jpg') center/cover no-repeat; /* change logo.png to your filename */
+      border-radius: 12px;
+      opacity: 0;
+      transform: scale(0.8);
+      box-shadow: 0 0 40px rgba(255,255,255,0.3);
+      animation: pulse 2s infinite alternate ease-in-out;
+    }
+    #boot-text {
+      margin: 40px 0 20px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    #boot-logs {
+      width: 80%;
+      max-width: 900px;
+      height: 40vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      font-family: monospace;
+      font-size: 14px;
+      color: #ddd;
+      opacity: 0;
+      transition: opacity 1s ease;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 8px;
+      flex-grow: 0;
+      margin-bottom: 80px;
+      display: flex;
+      flex-direction: column;
+    }
+    #boot-logs::-webkit-scrollbar {
+      width: 0;
+      display: none;
+    }
+    #boot-logs {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .log-line {
+      opacity: 1;
+      white-space: pre;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+      font-size: 14px;
+      color: #ddd;
+    }
+    .log-ok { color: #0f0; }
+    .log-failed { color: #f44; }
+    #progress-container {
+      position: fixed;
+      bottom: 40px;
+      width: 360px;
+      height: 6px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    #progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, rgb(104, 104, 104), rgb(83, 83, 83), rgb(240, 241, 240), rgb(255, 254, 254));
+      border-radius: 3px;
+      transition: width 0.2s ease-out;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes scaleIn { to { opacity: 1; transform: scale(1); } }
+    @keyframes pulse { to { box-shadow: 0 0 60px rgba(255,255,255,0.5); } }
+    @keyframes logFade { to { opacity: 1; } }
